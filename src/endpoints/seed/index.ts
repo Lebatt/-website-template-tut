@@ -9,6 +9,8 @@ import { imageHero1 } from './image-hero-1'
 import { post1 } from './post-1'
 import { post2 } from './post-2'
 import { post3 } from './post-3'
+import { generateWork } from './generateWork'
+import { generateImage } from './generateImage'
 
 const collections: CollectionSlug[] = [
   'categories',
@@ -118,45 +120,68 @@ export const seed = async ({
     fetchFileByURL(
       'https://raw.githubusercontent.com/payloadcms/payload/refs/heads/main/templates/website/src/endpoints/seed/image-hero1.webp',
     ),
+    // Work Images
     fetchFileByURL(
-      'https://raw.githubusercontent.com/Lebatt/-website-template-tut/refs/heads/portfolio-block/public/works/Ader-square.jpg.webp?token=GHSAT0AAAAAADKFRYPPMPOMGT2D2GDT5NDG2ORDCRQ',
+      'https://raw.githubusercontent.com/Lebatt/-website-template-tut/refs/heads/portfolio-block/public/works/Ader-square.jpg.webp?token=GHSAT0AAAAAADKFRYPP3X3L6FEMCXOL2PEY2ORD3BA',
     ),
     fetchFileByURL(
-      'https://raw.githubusercontent.com/Lebatt/-website-template-tut/refs/heads/portfolio-block/public/works/EDO_square_02.jpg.webp?token=GHSAT0AAAAAADKFRYPOJMFNAY4NTTOQBFII2ORDR5A',
+      'https://raw.githubusercontent.com/Lebatt/-website-template-tut/refs/heads/portfolio-block/public/works/EDO_square_02.jpg.webp?token=GHSAT0AAAAAADKFRYPP7K6LUDNYGBBUS7CW2ORD3JQ',
     ),
     fetchFileByURL(
-      'https://raw.githubusercontent.com/Lebatt/-website-template-tut/refs/heads/portfolio-block/public/works/RWH_square_04.jpg.webp?token=GHSAT0AAAAAADKFRYPOTEDVC2FIMPBH5JRY2ORDSAA',
+      'https://raw.githubusercontent.com/Lebatt/-website-template-tut/refs/heads/portfolio-block/public/works/RWH_square_04.jpg.webp?token=GHSAT0AAAAAADKFRYPO5R56RC4BIWORKSXQ2ORD3XA',
     ),
     fetchFileByURL(
-      'https://raw.githubusercontent.com/Lebatt/-website-template-tut/refs/heads/portfolio-block/public/works/bluegreen-square.jpg.webp?token=GHSAT0AAAAAADKFRYPPXC6EPMQ5FL2WDTWE2ORDSCA',
+      'https://raw.githubusercontent.com/Lebatt/-website-template-tut/refs/heads/portfolio-block/public/works/bluegreen-square.jpg.webp?token=GHSAT0AAAAAADKFRYPOOF5QMGS76BBO54FO2ORD37Q',
     ),
     fetchFileByURL(
-      'https://raw.githubusercontent.com/Lebatt/-website-template-tut/refs/heads/portfolio-block/public/works/cvgt-square.jpg.webp?token=GHSAT0AAAAAADKFRYPPROLEGSI6BO76JOOG2ORDSEA',
+      'https://raw.githubusercontent.com/Lebatt/-website-template-tut/refs/heads/portfolio-block/public/works/cvgt-square.jpg.webp?token=GHSAT0AAAAAADKFRYPPOAFKLY2USLTX5QWY2ORD4BA',
     ),
     fetchFileByURL(
-      'https://raw.githubusercontent.com/Lebatt/-website-template-tut/refs/heads/portfolio-block/public/works/dfat-poster.jpg.webp?token=GHSAT0AAAAAADKFRYPONATRSBJMHXGTB3DI2ORDSGA',
+      'https://raw.githubusercontent.com/Lebatt/-website-template-tut/refs/heads/portfolio-block/public/works/dfat-poster.jpg.webp?token=GHSAT0AAAAAADKFRYPPGMM3L5ZC7TMCBYFU2ORD4CQ',
     ),
     fetchFileByURL(
-      'https://raw.githubusercontent.com/Lebatt/-website-template-tut/refs/heads/portfolio-block/public/works/dropbottle-square.jpg.webp?token=GHSAT0AAAAAADKFRYPOAUL2YNTJWVN4R6E62ORDSIA',
+      'https://raw.githubusercontent.com/Lebatt/-website-template-tut/refs/heads/portfolio-block/public/works/dropbottle-square.jpg.webp?token=GHSAT0AAAAAADKFRYPPTGUXFWUCYDORQTHU2ORD4EA',
     ),
     fetchFileByURL(
-      'https://raw.githubusercontent.com/Lebatt/-website-template-tut/refs/heads/portfolio-block/public/works/key-insights.jpg.webp?token=GHSAT0AAAAAADKFRYPPY6BEEQSCTOCGJVI42ORDSKA',
+      'https://raw.githubusercontent.com/Lebatt/-website-template-tut/refs/heads/portfolio-block/public/works/key-insights.jpg.webp?token=GHSAT0AAAAAADKFRYPO7DERJGNGO6XUNVNY2ORD4FQ',
     ),
     fetchFileByURL(
-      'https://raw.githubusercontent.com/Lebatt/-website-template-tut/refs/heads/portfolio-block/public/works/map-square.jpg.webp?token=GHSAT0AAAAAADKFRYPPV7KFMWD6KSRDMAA42ORDSMA',
+      'https://raw.githubusercontent.com/Lebatt/-website-template-tut/refs/heads/portfolio-block/public/works/map-square.jpg.webp?token=GHSAT0AAAAAADKFRYPO352466Q3KDHJ6D4A2ORD4HA',
     ),
     fetchFileByURL(
-      'https://raw.githubusercontent.com/Lebatt/-website-template-tut/refs/heads/portfolio-block/public/works/oxfam-appeal-square.jpg.webp?token=GHSAT0AAAAAADKFRYPOLCQZLHPVZ4N2OLUK2ORDSOA',
+      'https://raw.githubusercontent.com/Lebatt/-website-template-tut/refs/heads/portfolio-block/public/works/oxfam-appeal-square.jpg.webp?token=GHSAT0AAAAAADKFRYPPPYW2BHYJCA7ESQEC2ORD4IQ',
     ),
     fetchFileByURL(
-      'https://raw.githubusercontent.com/Lebatt/-website-template-tut/refs/heads/portfolio-block/public/works/unwrapped-animated-thumbnail-poster.jpg.webp?token=GHSAT0AAAAAADKFRYPONME4SM5LG56SARRS2ORDSQA',
+      'https://raw.githubusercontent.com/Lebatt/-website-template-tut/refs/heads/portfolio-block/public/works/unwrapped-animated-thumbnail-poster.jpg.webp?token=GHSAT0AAAAAADKFRYPPO2AAKPN3LTP5TIEQ2ORD4LA',
     ),
     fetchFileByURL(
-      'https://raw.githubusercontent.com/Lebatt/-website-template-tut/refs/heads/portfolio-block/public/works/welcome-home-project-square.jpg.webp?token=GHSAT0AAAAAADKFRYPOD7EWYZZIOI3QWXL42ORDSRQ',
+      'https://raw.githubusercontent.com/Lebatt/-website-template-tut/refs/heads/portfolio-block/public/works/welcome-home-project-square.jpg.webp?token=GHSAT0AAAAAADKFRYPODOY2VIXIXEOVAPQW2ORD4MQ',
+    ),
+    // Brand Images
+    fetchFileByURL(
+      'https://raw.githubusercontent.com/Lebatt/-website-template-tut/refs/heads/portfolio-block/public/brands/Fictional%20company%20logo.png?token=GHSAT0AAAAAADKFRYPOUUEZSABZZGBDZTIW2ORD2AQ',
+    ),
+    fetchFileByURL(
+      'https://raw.githubusercontent.com/Lebatt/-website-template-tut/refs/heads/portfolio-block/public/brands/Fictional%20company%20logo2.png?token=GHSAT0AAAAAADKFRYPPJITSF3JSY7WGE22E2ORD2CA',
+    ),
+    fetchFileByURL(
+      'https://raw.githubusercontent.com/Lebatt/-website-template-tut/refs/heads/portfolio-block/public/brands/Fictional%20company%20logo3.png?token=GHSAT0AAAAAADKFRYPOBIZ7UPPKQV72OHPC2ORD2CQ',
+    ),
+    fetchFileByURL(
+      'https://raw.githubusercontent.com/Lebatt/-website-template-tut/refs/heads/portfolio-block/public/brands/Fictional%20company%20logo4.png?token=GHSAT0AAAAAADKFRYPPPYU4O4MWNW55TZ242ORD2EA',
+    ),
+    fetchFileByURL(
+      'https://raw.githubusercontent.com/Lebatt/-website-template-tut/refs/heads/portfolio-block/public/brands/Fictional%20company%20logo5.png?token=GHSAT0AAAAAADKFRYPOCOWBV5NKWZLYG4IK2ORD2FA',
     ),
   ])
 
-  const [demoAuthor, image1Doc, image2Doc, image3Doc, imageHomeDoc] = await Promise.all([
+  const [
+    demoAuthor, 
+    image1Doc, 
+    image2Doc, 
+    image3Doc, 
+    imageHomeDoc,
+  ] = await Promise.all([
     payload.create({
       collection: 'users',
       data: {
@@ -195,6 +220,39 @@ export const seed = async ({
       }),
     ),
   ])
+
+  // brand Images
+  let brandImages = []
+  const brandBuffers = [brand1Buffer, brand2Buffer, brand3Buffer, brand4Buffer, brand5Buffer]
+  for (const buffer of brandBuffers) {
+    const image = await payload.create({
+      collection: 'media',
+      data: generateImage(),
+      file: buffer,
+    })
+    brandImages.push(image)
+  }
+
+  // works 
+  let workDocs = []
+  const workBuffers = [ work1Buffer, work2Buffer, work3Buffer, work4Buffer, work5Buffer, work6Buffer, work7Buffer, work8Buffer, work9Buffer, work10Buffer, work11Buffer, work12Buffer]
+  for (const buffer of workBuffers) {
+    const image = await payload.create({
+      collection: 'media',
+      data: generateImage(),
+      file: buffer,
+    })
+
+    // generate work
+    const workDate = generateWork({ image })
+    
+    const workDoc = await payload.create({
+      collection: 'works',
+      data: workDate,
+    })
+
+    workDocs.push(workDoc)
+  }
 
   payload.logger.info(`— Seeding posts...`)
 
@@ -264,7 +322,7 @@ export const seed = async ({
     payload.create({
       collection: 'pages',
       depth: 0,
-      data: home({ heroImage: imageHomeDoc, metaImage: image2Doc }),
+      data: home({ heroImage: imageHomeDoc, brandImages, works: workDocs }),
     }),
     payload.create({
       collection: 'pages',
