@@ -20,6 +20,7 @@ const collections: CollectionSlug[] = [
   'forms',
   'form-submissions',
   'search',
+  'works',
 ]
 
 const globals: GlobalSlug[] = ['header', 'footer']
@@ -122,56 +123,56 @@ export const seed = async ({
     ),
     // Work Images
     fetchFileByURL(
-      'https://raw.githubusercontent.com/Lebatt/-website-template-tut/refs/heads/portfolio-block/public/works/Ader-square.jpg.webp?token=GHSAT0AAAAAADKFRYPP3X3L6FEMCXOL2PEY2ORD3BA',
+      'https://github.com/Lebatt/-website-template-tut/blob/dea03ce537cc04579979ebeef9fd721143ecbb0a/public/works/Ader-square.jpg.webp',
     ),
     fetchFileByURL(
-      'https://raw.githubusercontent.com/Lebatt/-website-template-tut/refs/heads/portfolio-block/public/works/EDO_square_02.jpg.webp?token=GHSAT0AAAAAADKFRYPP7K6LUDNYGBBUS7CW2ORD3JQ',
+      'https://raw.githubusercontent.com/Lebatt/-website-template-tut/refs/heads/portfolio-block/public/works/EDO_square_02.jpg.webp',
     ),
     fetchFileByURL(
-      'https://raw.githubusercontent.com/Lebatt/-website-template-tut/refs/heads/portfolio-block/public/works/RWH_square_04.jpg.webp?token=GHSAT0AAAAAADKFRYPO5R56RC4BIWORKSXQ2ORD3XA',
+      'https://raw.githubusercontent.com/Lebatt/-website-template-tut/refs/heads/portfolio-block/public/works/RWH_square_04.jpg.webp',
     ),
     fetchFileByURL(
-      'https://raw.githubusercontent.com/Lebatt/-website-template-tut/refs/heads/portfolio-block/public/works/bluegreen-square.jpg.webp?token=GHSAT0AAAAAADKFRYPOOF5QMGS76BBO54FO2ORD37Q',
+      'https://raw.githubusercontent.com/Lebatt/-website-template-tut/refs/heads/portfolio-block/public/works/bluegreen-square.jpg.webp',
     ),
     fetchFileByURL(
-      'https://raw.githubusercontent.com/Lebatt/-website-template-tut/refs/heads/portfolio-block/public/works/cvgt-square.jpg.webp?token=GHSAT0AAAAAADKFRYPPOAFKLY2USLTX5QWY2ORD4BA',
+      'https://raw.githubusercontent.com/Lebatt/-website-template-tut/refs/heads/portfolio-block/public/works/cvgt-square.jpg.webp',
     ),
     fetchFileByURL(
-      'https://raw.githubusercontent.com/Lebatt/-website-template-tut/refs/heads/portfolio-block/public/works/dfat-poster.jpg.webp?token=GHSAT0AAAAAADKFRYPPGMM3L5ZC7TMCBYFU2ORD4CQ',
+      'https://raw.githubusercontent.com/Lebatt/-website-template-tut/refs/heads/portfolio-block/public/works/dfat-poster.jpg.webp',
     ),
     fetchFileByURL(
-      'https://raw.githubusercontent.com/Lebatt/-website-template-tut/refs/heads/portfolio-block/public/works/dropbottle-square.jpg.webp?token=GHSAT0AAAAAADKFRYPPTGUXFWUCYDORQTHU2ORD4EA',
+      'https://raw.githubusercontent.com/Lebatt/-website-template-tut/refs/heads/portfolio-block/public/works/dropbottle-square.jpg.webp',
     ),
     fetchFileByURL(
-      'https://raw.githubusercontent.com/Lebatt/-website-template-tut/refs/heads/portfolio-block/public/works/key-insights.jpg.webp?token=GHSAT0AAAAAADKFRYPO7DERJGNGO6XUNVNY2ORD4FQ',
+      'https://raw.githubusercontent.com/Lebatt/-website-template-tut/refs/heads/portfolio-block/public/works/key-insights.jpg.webp',
     ),
     fetchFileByURL(
-      'https://raw.githubusercontent.com/Lebatt/-website-template-tut/refs/heads/portfolio-block/public/works/map-square.jpg.webp?token=GHSAT0AAAAAADKFRYPO352466Q3KDHJ6D4A2ORD4HA',
+      'https://raw.githubusercontent.com/Lebatt/-website-template-tut/refs/heads/portfolio-block/public/works/map-square.jpg.webp',
     ),
     fetchFileByURL(
-      'https://raw.githubusercontent.com/Lebatt/-website-template-tut/refs/heads/portfolio-block/public/works/oxfam-appeal-square.jpg.webp?token=GHSAT0AAAAAADKFRYPPPYW2BHYJCA7ESQEC2ORD4IQ',
+      'https://raw.githubusercontent.com/Lebatt/-website-template-tut/refs/heads/portfolio-block/public/works/oxfam-appeal-square.jpg.webp',
     ),
     fetchFileByURL(
-      'https://raw.githubusercontent.com/Lebatt/-website-template-tut/refs/heads/portfolio-block/public/works/unwrapped-animated-thumbnail-poster.jpg.webp?token=GHSAT0AAAAAADKFRYPPO2AAKPN3LTP5TIEQ2ORD4LA',
+      'https://raw.githubusercontent.com/Lebatt/-website-template-tut/refs/heads/portfolio-block/public/works/unwrapped-animated-thumbnail-poster.jpg.webp',
     ),
     fetchFileByURL(
-      'https://raw.githubusercontent.com/Lebatt/-website-template-tut/refs/heads/portfolio-block/public/works/welcome-home-project-square.jpg.webp?token=GHSAT0AAAAAADKFRYPODOY2VIXIXEOVAPQW2ORD4MQ',
+      'https://raw.githubusercontent.com/Lebatt/-website-template-tut/refs/heads/portfolio-block/public/works/welcome-home-project-square.jpg.webp',
     ),
     // Brand Images
     fetchFileByURL(
-      'https://raw.githubusercontent.com/Lebatt/-website-template-tut/refs/heads/portfolio-block/public/brands/Fictional%20company%20logo.png?token=GHSAT0AAAAAADKFRYPOUUEZSABZZGBDZTIW2ORD2AQ',
+      'https://raw.githubusercontent.com/Lebatt/-website-template-tut/refs/heads/portfolio-block/public/brands/Fictional%20company%20logo.png',
     ),
     fetchFileByURL(
-      'https://raw.githubusercontent.com/Lebatt/-website-template-tut/refs/heads/portfolio-block/public/brands/Fictional%20company%20logo2.png?token=GHSAT0AAAAAADKFRYPPJITSF3JSY7WGE22E2ORD2CA',
+      'https://raw.githubusercontent.com/Lebatt/-website-template-tut/refs/heads/portfolio-block/public/brands/Fictional%20company%20logo2.png',
     ),
     fetchFileByURL(
-      'https://raw.githubusercontent.com/Lebatt/-website-template-tut/refs/heads/portfolio-block/public/brands/Fictional%20company%20logo3.png?token=GHSAT0AAAAAADKFRYPOBIZ7UPPKQV72OHPC2ORD2CQ',
+      'https://raw.githubusercontent.com/Lebatt/-website-template-tut/refs/heads/portfolio-block/public/brands/Fictional%20company%20logo3.png',
     ),
     fetchFileByURL(
-      'https://raw.githubusercontent.com/Lebatt/-website-template-tut/refs/heads/portfolio-block/public/brands/Fictional%20company%20logo4.png?token=GHSAT0AAAAAADKFRYPPPYU4O4MWNW55TZ242ORD2EA',
+      'https://raw.githubusercontent.com/Lebatt/-website-template-tut/refs/heads/portfolio-block/public/brands/Fictional%20company%20logo4.png',
     ),
     fetchFileByURL(
-      'https://raw.githubusercontent.com/Lebatt/-website-template-tut/refs/heads/portfolio-block/public/brands/Fictional%20company%20logo5.png?token=GHSAT0AAAAAADKFRYPOCOWBV5NKWZLYG4IK2ORD2FA',
+      'https://raw.githubusercontent.com/Lebatt/-website-template-tut/refs/heads/portfolio-block/public/brands/Fictional%20company%20logo5.png',
     ),
   ])
 
