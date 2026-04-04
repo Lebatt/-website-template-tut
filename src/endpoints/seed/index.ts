@@ -83,7 +83,29 @@ export const seed = async ({
 
   payload.logger.info(`— Seeding media...`)
 
-  const [image1Buffer, image2Buffer, image3Buffer, hero1Buffer] = await Promise.all([
+  const [
+    image1Buffer,
+    image2Buffer,
+    image3Buffer,
+    hero1Buffer,
+    work1Buffer,
+    work2Buffer,
+    work3Buffer,
+    work4Buffer,
+    work5Buffer,
+    work6Buffer,
+    work7Buffer,
+    work8Buffer,
+    work9Buffer,
+    work10Buffer,
+    work11Buffer,
+    work12Buffer,
+    brand1Buffer,
+    brand2Buffer,
+    brand3Buffer,
+    brand4Buffer,
+    brand5Buffer,
+  ] = await Promise.all([
     fetchFileByURL(
       'https://raw.githubusercontent.com/payloadcms/payload/refs/heads/main/templates/website/src/endpoints/seed/image-post1.webp',
     ),
@@ -95,6 +117,42 @@ export const seed = async ({
     ),
     fetchFileByURL(
       'https://raw.githubusercontent.com/payloadcms/payload/refs/heads/main/templates/website/src/endpoints/seed/image-hero1.webp',
+    ),
+    fetchFileByURL(
+      'https://raw.githubusercontent.com/Lebatt/-website-template-tut/refs/heads/portfolio-block/public/works/Ader-square.jpg.webp?token=GHSAT0AAAAAADKFRYPPMPOMGT2D2GDT5NDG2ORDCRQ',
+    ),
+    fetchFileByURL(
+      'https://raw.githubusercontent.com/Lebatt/-website-template-tut/refs/heads/portfolio-block/public/works/EDO_square_02.jpg.webp?token=GHSAT0AAAAAADKFRYPOJMFNAY4NTTOQBFII2ORDR5A',
+    ),
+    fetchFileByURL(
+      'https://raw.githubusercontent.com/Lebatt/-website-template-tut/refs/heads/portfolio-block/public/works/RWH_square_04.jpg.webp?token=GHSAT0AAAAAADKFRYPOTEDVC2FIMPBH5JRY2ORDSAA',
+    ),
+    fetchFileByURL(
+      'https://raw.githubusercontent.com/Lebatt/-website-template-tut/refs/heads/portfolio-block/public/works/bluegreen-square.jpg.webp?token=GHSAT0AAAAAADKFRYPPXC6EPMQ5FL2WDTWE2ORDSCA',
+    ),
+    fetchFileByURL(
+      'https://raw.githubusercontent.com/Lebatt/-website-template-tut/refs/heads/portfolio-block/public/works/cvgt-square.jpg.webp?token=GHSAT0AAAAAADKFRYPPROLEGSI6BO76JOOG2ORDSEA',
+    ),
+    fetchFileByURL(
+      'https://raw.githubusercontent.com/Lebatt/-website-template-tut/refs/heads/portfolio-block/public/works/dfat-poster.jpg.webp?token=GHSAT0AAAAAADKFRYPONATRSBJMHXGTB3DI2ORDSGA',
+    ),
+    fetchFileByURL(
+      'https://raw.githubusercontent.com/Lebatt/-website-template-tut/refs/heads/portfolio-block/public/works/dropbottle-square.jpg.webp?token=GHSAT0AAAAAADKFRYPOAUL2YNTJWVN4R6E62ORDSIA',
+    ),
+    fetchFileByURL(
+      'https://raw.githubusercontent.com/Lebatt/-website-template-tut/refs/heads/portfolio-block/public/works/key-insights.jpg.webp?token=GHSAT0AAAAAADKFRYPPY6BEEQSCTOCGJVI42ORDSKA',
+    ),
+    fetchFileByURL(
+      'https://raw.githubusercontent.com/Lebatt/-website-template-tut/refs/heads/portfolio-block/public/works/map-square.jpg.webp?token=GHSAT0AAAAAADKFRYPPV7KFMWD6KSRDMAA42ORDSMA',
+    ),
+    fetchFileByURL(
+      'https://raw.githubusercontent.com/Lebatt/-website-template-tut/refs/heads/portfolio-block/public/works/oxfam-appeal-square.jpg.webp?token=GHSAT0AAAAAADKFRYPOLCQZLHPVZ4N2OLUK2ORDSOA',
+    ),
+    fetchFileByURL(
+      'https://raw.githubusercontent.com/Lebatt/-website-template-tut/refs/heads/portfolio-block/public/works/unwrapped-animated-thumbnail-poster.jpg.webp?token=GHSAT0AAAAAADKFRYPONME4SM5LG56SARRS2ORDSQA',
+    ),
+    fetchFileByURL(
+      'https://raw.githubusercontent.com/Lebatt/-website-template-tut/refs/heads/portfolio-block/public/works/welcome-home-project-square.jpg.webp?token=GHSAT0AAAAAADKFRYPOD7EWYZZIOI3QWXL42ORDSRQ',
     ),
   ])
 

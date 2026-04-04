@@ -1,6 +1,6 @@
 import { Block } from "payload";
 
-export const Portfoli: Block = {
+export const Portfolio: Block = {
     slug: "portfolio",
     fields: [
         {

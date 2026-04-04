@@ -1,14 +1,16 @@
 import type { RequiredDataFromCollectionSlug } from 'payload'
-import type { Media } from '@/payload-types'
+import type { Media, Work } from '@/payload-types'
 
 type HomeArgs = {
   heroImage: Media
-  metaImage: Media
+  brandImages: Media[]
+  works: Work[]
 }
 
 export const home: (args: HomeArgs) => RequiredDataFromCollectionSlug<'pages'> = ({
   heroImage,
-  metaImage,
+  brandImages,
+  works,
 }) => {
   return {
     slug: 'home',
@@ -140,7 +142,24 @@ export const home: (args: HomeArgs) => RequiredDataFromCollectionSlug<'pages'> =
       },
     },
     layout: [
+      // Brands Block
       {
+        blockName: 'Brands Block',
+        blockType: 'brands',
+        media: brandImages.map((image) => ({
+          image: image.id,
+        })),
+      },
+
+      // Portfolio Block
+      {
+        blockName: 'Portfolio Block',
+        blockType: 'portfolio',
+        title: 'Featured Work',
+        description: 'A selection of recent work showcasing the flexibility of Payload as a headless CMS.',
+        works: works.map((work) => work.id),
+      },
+      /* {
         blockName: 'Content Block',
         blockType: 'content',
         columns: [
@@ -663,7 +682,7 @@ export const home: (args: HomeArgs) => RequiredDataFromCollectionSlug<'pages'> =
             version: 1,
           },
         },
-      },
+      }, */
     ],
     meta: {
       description: 'An open-source website built with Payload and Next.js.',
