@@ -41,8 +41,6 @@ export const PortfolioBlock: React.FC<PortfolioBlockProps> = ({
         });
     }, [works, setParams]);
 
-    console.log("PortfolioBlock data:", portfolioGrid);
-
     return (
         <div className="w-full p-0 m-0 bg-foreground pt-12">
             <h2 className="text-6xl font-bold mb-4 text-background text-center">{title}</h2>
