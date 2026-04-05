@@ -17,6 +17,11 @@ export const Works: CollectionConfig = {
     admin: {
         useAsTitle: "title",
     },
+    defaultPopulate: {
+        title: true,
+        description: true,
+        image: true,
+    },
     fields: [
         {
             name: "title",

@@ -123,40 +123,40 @@ export const seed = async ({
     ),
     // Work Images
     fetchFileByURL(
-      'https://github.com/Lebatt/-website-template-tut/blob/dea03ce537cc04579979ebeef9fd721143ecbb0a/public/works/Ader-square.jpg.webp',
+      'https://raw.githubusercontent.com/Lebatt/-website-template-tut/refs/heads/portfolio-block/public/works/EDO_square_02.webp',
     ),
     fetchFileByURL(
-      'https://raw.githubusercontent.com/Lebatt/-website-template-tut/refs/heads/portfolio-block/public/works/EDO_square_02.jpg.webp',
+      'https://raw.githubusercontent.com/Lebatt/-website-template-tut/refs/heads/portfolio-block/public/works/RWH_square_04.webp',
     ),
     fetchFileByURL(
-      'https://raw.githubusercontent.com/Lebatt/-website-template-tut/refs/heads/portfolio-block/public/works/RWH_square_04.jpg.webp',
+      'https://raw.githubusercontent.com/Lebatt/-website-template-tut/refs/heads/portfolio-block/public/works/bluegreen-square.webp',
     ),
     fetchFileByURL(
-      'https://raw.githubusercontent.com/Lebatt/-website-template-tut/refs/heads/portfolio-block/public/works/bluegreen-square.jpg.webp',
+      'https://raw.githubusercontent.com/Lebatt/-website-template-tut/refs/heads/portfolio-block/public/works/cvgt-square.webp',
     ),
     fetchFileByURL(
-      'https://raw.githubusercontent.com/Lebatt/-website-template-tut/refs/heads/portfolio-block/public/works/cvgt-square.jpg.webp',
+      'https://raw.githubusercontent.com/Lebatt/-website-template-tut/refs/heads/portfolio-block/public/works/dfat-poster.webp',
     ),
     fetchFileByURL(
-      'https://raw.githubusercontent.com/Lebatt/-website-template-tut/refs/heads/portfolio-block/public/works/dfat-poster.jpg.webp',
+      'https://raw.githubusercontent.com/Lebatt/-website-template-tut/refs/heads/portfolio-block/public/works/dropbottle-square.webp',
     ),
     fetchFileByURL(
-      'https://raw.githubusercontent.com/Lebatt/-website-template-tut/refs/heads/portfolio-block/public/works/dropbottle-square.jpg.webp',
+      'https://raw.githubusercontent.com/Lebatt/-website-template-tut/refs/heads/portfolio-block/public/works/key-insights.webp',
     ),
     fetchFileByURL(
-      'https://raw.githubusercontent.com/Lebatt/-website-template-tut/refs/heads/portfolio-block/public/works/key-insights.jpg.webp',
+      'https://raw.githubusercontent.com/Lebatt/-website-template-tut/refs/heads/portfolio-block/public/works/map-square.webp',
     ),
     fetchFileByURL(
-      'https://raw.githubusercontent.com/Lebatt/-website-template-tut/refs/heads/portfolio-block/public/works/map-square.jpg.webp',
+      'https://raw.githubusercontent.com/Lebatt/-website-template-tut/refs/heads/portfolio-block/public/works/oxfam-appeal-square.webp',
     ),
     fetchFileByURL(
-      'https://raw.githubusercontent.com/Lebatt/-website-template-tut/refs/heads/portfolio-block/public/works/oxfam-appeal-square.jpg.webp',
+      'https://raw.githubusercontent.com/Lebatt/-website-template-tut/refs/heads/portfolio-block/public/works/unwrapped-animated-thumbnail-poster.webp',
     ),
     fetchFileByURL(
-      'https://raw.githubusercontent.com/Lebatt/-website-template-tut/refs/heads/portfolio-block/public/works/unwrapped-animated-thumbnail-poster.jpg.webp',
+      'https://raw.githubusercontent.com/Lebatt/-website-template-tut/refs/heads/portfolio-block/public/works/welcome-home-project-square.webp',
     ),
     fetchFileByURL(
-      'https://raw.githubusercontent.com/Lebatt/-website-template-tut/refs/heads/portfolio-block/public/works/welcome-home-project-square.jpg.webp',
+      'https://raw.githubusercontent.com/Lebatt/-website-template-tut/refs/heads/portfolio-block/public/works/Ader-square.webp',
     ),
     // Brand Images
     fetchFileByURL(
