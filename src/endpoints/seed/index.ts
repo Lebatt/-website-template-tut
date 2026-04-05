@@ -255,6 +255,31 @@ export const seed = async ({
     workDocs.push(workDoc)
   }
 
+  payload.logger.info(`— Seeding services...`)
+  const services = [
+    'Web design & UI',
+    'Social media visuals',
+    'Infographics',
+    'Design System',
+    'Email design',
+    'Stationery',
+    'Icons',
+    'Packaging & merch',
+    'Signage',
+    'Brochures',
+    'Logos & branding',
+    'Digital ads',
+    'Wireframes'
+  ]
+  for (const service of services) {
+    await payload.create({
+      collection: 'services',
+      data: {
+        title: service,
+      },
+    })
+  }
+
   payload.logger.info(`— Seeding posts...`)
 
   // Do not create posts with `Promise.all` because we want the posts to be created in order

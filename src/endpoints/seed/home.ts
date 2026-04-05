@@ -159,6 +159,12 @@ export const home: (args: HomeArgs) => RequiredDataFromCollectionSlug<'pages'> =
         description: 'A selection of recent work showcasing the flexibility of Payload as a headless CMS.',
         works: works.map((work) => work.id),
       },
+      {
+        blockName: 'Services Block',
+        blockType: 'services',
+        title: 'We can help you with...',
+        description: 'Our Capabilities',
+      }
       /* {
         blockName: 'Content Block',
         blockType: 'content',
