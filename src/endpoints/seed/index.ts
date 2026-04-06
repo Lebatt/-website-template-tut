@@ -348,7 +348,12 @@ export const seed = async ({
     payload.create({
       collection: 'pages',
       depth: 0,
-      data: home({ heroImage: imageHomeDoc, brandImages, works: workDocs }),
+      data: home({ 
+        heroImage: imageHomeDoc, 
+        brandImages, 
+        works: workDocs,
+        posts: [post1Doc, post2Doc, post3Doc],
+      }),
     }),
     payload.create({
       collection: 'pages',

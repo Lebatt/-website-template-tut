@@ -214,6 +214,7 @@ export interface Page {
     | BrandsBlock
     | PortfolioBlock
     | ServicesBlock
+    | ArticlesBlock
   )[];
   meta?: {
     title?: string | null;
@@ -860,6 +861,19 @@ export interface ServicesBlock {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "ArticlesBlock".
+ */
+export interface ArticlesBlock {
+  title: string;
+  subtitle?: string | null;
+  description?: string | null;
+  posts?: (number | Post)[] | null;
+  id?: string | null;
+  blockName?: string | null;
+  blockType: 'articles';
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "services".
  */
 export interface Service {
@@ -1202,6 +1216,7 @@ export interface PagesSelect<T extends boolean = true> {
         brands?: T | BrandsBlockSelect<T>;
         portfolio?: T | PortfolioBlockSelect<T>;
         services?: T | ServicesBlockSelect<T>;
+        articles?: T | ArticlesBlockSelect<T>;
       };
   meta?:
     | T
@@ -1333,6 +1348,18 @@ export interface PortfolioBlockSelect<T extends boolean = true> {
 export interface ServicesBlockSelect<T extends boolean = true> {
   title?: T;
   description?: T;
+  id?: T;
+  blockName?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "ArticlesBlock_select".
+ */
+export interface ArticlesBlockSelect<T extends boolean = true> {
+  title?: T;
+  subtitle?: T;
+  description?: T;
+  posts?: T;
   id?: T;
   blockName?: T;
 }

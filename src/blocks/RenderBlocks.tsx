@@ -10,6 +10,7 @@ import { MediaBlock } from '@/blocks/MediaBlock/Component'
 import { BrandsBlock } from './Brands/Component'
 import { PortfolioBlock } from './Portfolio/Component'
 import { ServicesBlock } from './Services/Component'
+import { ArticlesBlock } from './Articles/Component'
 
 const blockComponents = {
   archive: ArchiveBlock,
@@ -20,6 +21,7 @@ const blockComponents = {
   brands: BrandsBlock,
   portfolio: PortfolioBlock,
   services: ServicesBlock,
+  articles: ArticlesBlock,
 }
 
 export const RenderBlocks: React.FC<{

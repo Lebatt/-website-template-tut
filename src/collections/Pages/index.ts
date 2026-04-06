@@ -23,6 +23,7 @@ import {
 import { Brands } from '@/blocks/Brands/config'
 import { Portfolio } from '@/blocks/Portfolio/config'
 import { Services } from '@/blocks/Services/config'
+import { Articles } from '@/blocks/Articles/config'
 
 export const Pages: CollectionConfig<'pages'> = {
   slug: 'pages',
@@ -75,7 +76,7 @@ export const Pages: CollectionConfig<'pages'> = {
             {
               name: 'layout',
               type: 'blocks',
-              blocks: [CallToAction, Content, MediaBlock, Archive, FormBlock, Brands, Portfolio, Services],
+              blocks: [CallToAction, Content, MediaBlock, Archive, FormBlock, Brands, Portfolio, Services, Articles],
               required: true,
               admin: {
                 initCollapsed: true,
