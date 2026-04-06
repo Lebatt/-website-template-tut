@@ -174,6 +174,69 @@ export const home: (args: HomeArgs) => RequiredDataFromCollectionSlug<'pages'> =
         subtitle: "Blogs",
         description: 'Best Articles to get started',
         posts: posts.map((post) => post.id),
+      },
+      {
+        blockName: 'Call to Action Block',
+        blockType: 'cta',
+        richText: {
+          root: {
+            type: 'root',
+            children: [
+              {
+                type: 'heading',
+                children: [
+                  {
+                    type: 'text',
+                    detail: 0,
+                    format: 0,
+                    mode: 'normal',
+                    style: '',
+                    text: 'Become part of the design revolution',
+                    version: 1,
+                  },
+                ],
+                direction: 'ltr',
+                format: '',
+                indent: 0,
+                tag: 'h2',
+                version: 1,
+              },
+              {
+                type: 'paragraph',
+                children: [
+                  {
+                    type: 'text',
+                    detail: 0,
+                    format: 0,
+                    mode: 'normal',
+                    style: '',
+                    text: "Jump on a membership and start requesting designs right away!",
+                    version: 1,
+                  },
+                ],
+                direction: 'ltr',
+                format: '',
+                indent: 0,
+                textFormat: 0,
+                version: 1,
+              },
+            ],
+            direction: 'ltr',
+            format: '',
+            indent: 0,
+            version: 1,
+          },
+        },
+        links: [
+          {
+            link: {
+              type: 'custom',
+              appearance: 'default',
+              label: 'View pricing',
+              url: '/pricing',
+            },
+          },
+        ],
       }
     ],
     meta: {
