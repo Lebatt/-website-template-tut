@@ -11,6 +11,7 @@ import { BrandsBlock } from './Brands/Component'
 import { PortfolioBlock } from './Portfolio/Component'
 import { ServicesBlock } from './Services/Component'
 import { ArticlesBlock } from './Articles/Component'
+import { FAQBlock } from './FAQ/Component'
 
 const blockComponents = {
   archive: ArchiveBlock,
@@ -22,6 +23,7 @@ const blockComponents = {
   portfolio: PortfolioBlock,
   services: ServicesBlock,
   articles: ArticlesBlock,
+  faq: FAQBlock,
 }
 
 export const RenderBlocks: React.FC<{

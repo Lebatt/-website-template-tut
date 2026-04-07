@@ -216,6 +216,7 @@ export interface Page {
     | PortfolioBlock
     | ServicesBlock
     | ArticlesBlock
+    | FAQBlock
   )[];
   meta?: {
     title?: string | null;
@@ -877,6 +878,38 @@ export interface ArticlesBlock {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "FAQBlock".
+ */
+export interface FAQBlock {
+  title?: string | null;
+  description?: string | null;
+  items?:
+    | {
+        question?: string | null;
+        answer?: {
+          root: {
+            type: string;
+            children: {
+              type: any;
+              version: number;
+              [k: string]: unknown;
+            }[];
+            direction: ('ltr' | 'rtl') | null;
+            format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+            indent: number;
+            version: number;
+          };
+          [k: string]: unknown;
+        } | null;
+        id?: string | null;
+      }[]
+    | null;
+  id?: string | null;
+  blockName?: string | null;
+  blockType: 'faq';
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "services".
  */
 export interface Service {
@@ -1221,6 +1254,7 @@ export interface PagesSelect<T extends boolean = true> {
         portfolio?: T | PortfolioBlockSelect<T>;
         services?: T | ServicesBlockSelect<T>;
         articles?: T | ArticlesBlockSelect<T>;
+        faq?: T | FAQBlockSelect<T>;
       };
   meta?:
     | T
@@ -1366,6 +1400,23 @@ export interface ArticlesBlockSelect<T extends boolean = true> {
   subtitle?: T;
   description?: T;
   posts?: T;
+  id?: T;
+  blockName?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "FAQBlock_select".
+ */
+export interface FAQBlockSelect<T extends boolean = true> {
+  title?: T;
+  description?: T;
+  items?:
+    | T
+    | {
+        question?: T;
+        answer?: T;
+        id?: T;
+      };
   id?: T;
   blockName?: T;
 }
