@@ -420,30 +420,107 @@ export const seed = async ({
     payload.updateGlobal({
       slug: 'footer',
       data: {
+        shortText: {
+          root: {
+            children: [
+              {
+                children: [
+                  {
+                    detail: 0,
+                    format: 0,
+                    mode: 'normal',
+                    style: '',
+                    text: 'Kornix - the leading digital agency based in the UK, working with top-tier clients, from start-ups to enterprises.',
+                    type: 'text',
+                    version: 1,
+                  }
+                ],
+                direction: null,
+                format: '',
+                indent: 0,
+                type: 'paragraph',
+                version: 1,
+                textFormat: 0,
+                textStyle: '',
+              }
+            ],
+            direction: null,
+            format: '',
+            indent: 0,
+            type: 'root',
+            version: 1,
+          }
+        },
+        copyrightText: "Kornix. All rights reserved.",
+        contact: {
+          email: "info@kornix.com",
+          phone: "+44 1234 567890"
+        },
+        socialLinks: [
+          {
+            link: {
+              type: 'custom',
+              newTab: true,
+              icon: brandImages[0].id,
+              url: '/instagram',
+              label: 'Instagram',
+            }
+          },
+          {
+            link: {
+              type: 'custom',
+              newTab: true,
+              icon: brandImages[1].id,
+              url: '/linkedin',
+              label: 'LinkedIn',
+            }
+          },
+          {
+            link: {
+              type: 'custom',
+              newTab: true,
+              icon: brandImages[2].id,
+              url: '/dribbble',
+              label: 'Dribbble',
+            }
+          }
+        ],
         navItems: [
           {
             link: {
               type: 'custom',
-              label: 'Admin',
-              url: '/admin',
+              label: 'Process',
+              url: '/process',
             },
           },
           {
             link: {
               type: 'custom',
-              label: 'Source Code',
-              newTab: true,
-              url: 'https://github.com/payloadcms/payload/tree/main/templates/website',
+              label: 'Benefits',
+              url: '/benefits',
             },
           },
           {
             link: {
               type: 'custom',
-              label: 'Payload',
-              newTab: true,
-              url: 'https://payloadcms.com/',
+              label: 'Services',
+              url: '/services',
             },
           },
+          {
+            link: {
+              type: 'custom',
+              label: 'Portfolio',
+              url: '/portfolio',
+            }
+          },
+          {
+            link: {
+              type: 'custom',
+              label: 'FAQ',
+              url: '/faq',
+            }
+          }
         ],
       },
     }),
