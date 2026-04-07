@@ -71,6 +71,11 @@ export const link: LinkType = ({ appearances, defaultAppearance = 'default', dis
             },
             label: 'Open in new tab',
           },
+          {
+            name: 'icon',
+            type: 'relationship',
+            relationTo: 'media',
+          }
         ],
       },
     ],
