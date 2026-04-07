@@ -108,6 +108,9 @@ export const seed = async ({
     brand3Buffer,
     brand4Buffer,
     brand5Buffer,
+    socialIcon1Buffer,
+    socialIcon2Buffer,
+    socialIcon3Buffer,
   ] = await Promise.all([
     fetchFileByURL(
       'https://raw.githubusercontent.com/payloadcms/payload/refs/heads/main/templates/website/src/endpoints/seed/image-post1.webp',
@@ -173,6 +176,16 @@ export const seed = async ({
     ),
     fetchFileByURL(
       'https://raw.githubusercontent.com/Lebatt/-website-template-tut/refs/heads/portfolio-block/public/brands/Fictional%20company%20logo5.png',
+    ),
+    // Social Icons
+    fetchFileByURL(
+      'https://raw.githubusercontent.com/Lebatt/-website-template-tut/refs/heads/portfolio-block/public/social/instagram.png',
+    ),
+    fetchFileByURL(
+      'https://raw.githubusercontent.com/Lebatt/-website-template-tut/refs/heads/portfolio-block/public/social/linkedin.png',
+    ),
+    fetchFileByURL(
+      'https://raw.githubusercontent.com/Lebatt/-website-template-tut/refs/heads/portfolio-block/public/social/dribbble.png',
     ),
   ])
 
