@@ -179,15 +179,18 @@ export const seed = async ({
     ),
     // Social Icons
     fetchFileByURL(
-      'https://raw.githubusercontent.com/Lebatt/-website-template-tut/refs/heads/portfolio-block/public/social/instagram.png',
+      'https://raw.githubusercontent.com/Lebatt/-website-template-tut/refs/heads/footer/public/social/ig.png',
     ),
     fetchFileByURL(
-      'https://raw.githubusercontent.com/Lebatt/-website-template-tut/refs/heads/portfolio-block/public/social/linkedin.png',
+      'https://raw.githubusercontent.com/Lebatt/-website-template-tut/refs/heads/footer/public/social/li.png',
     ),
     fetchFileByURL(
-      'https://raw.githubusercontent.com/Lebatt/-website-template-tut/refs/heads/portfolio-block/public/social/dribbble.png',
+      'https://raw.githubusercontent.com/Lebatt/-website-template-tut/refs/heads/footer/public/social/dr.png',
     ),
   ])
+  
+  let brandImages = []
+  let socialIcons = []
 
   const [
     demoAuthor, 
@@ -236,7 +239,6 @@ export const seed = async ({
   ])
 
   // brand Images
-  let brandImages = []
   const brandBuffers = [brand1Buffer, brand2Buffer, brand3Buffer, brand4Buffer, brand5Buffer]
   for (const buffer of brandBuffers) {
     const image = await payload.create({
@@ -245,6 +247,17 @@ export const seed = async ({
       file: buffer,
     })
     brandImages.push(image)
+  }
+
+  // social icons
+  const socialIconBuffers = [socialIcon1Buffer, socialIcon2Buffer, socialIcon3Buffer]
+  for (const buffer of socialIconBuffers) {
+    const image = await payload.create({
+      collection: 'media',
+      data: generateImage(),
+      file: buffer,
+    })
+    socialIcons.push(image)
   }
 
   // works 
@@ -474,7 +487,7 @@ export const seed = async ({
             link: {
               type: 'custom',
               newTab: true,
-              icon: brandImages[0].id,
+              icon: socialIcons[0].id,
               url: '/instagram',
               label: 'Instagram',
             }
@@ -483,7 +496,7 @@ export const seed = async ({
             link: {
               type: 'custom',
               newTab: true,
-              icon: brandImages[1].id,
+              icon: socialIcons[1].id,
               url: '/linkedin',
               label: 'LinkedIn',
             }
@@ -492,7 +505,7 @@ export const seed = async ({
             link: {
               type: 'custom',
               newTab: true,
-              icon: brandImages[2].id,
+              icon: socialIcons[2].id,
               url: '/dribbble',
               label: 'Dribbble',
             }
