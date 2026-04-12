@@ -87,9 +87,12 @@ export const seed = async ({
   payload.logger.info(`— Seeding media...`)
 
   const [
-    image1Buffer,
-    image2Buffer,
-    image3Buffer,
+    post1Buffer,
+    post2Buffer,
+    post3Buffer,
+    post4Buffer,
+    post5Buffer,
+    post6Buffer,
     hero1Buffer,
     work1Buffer,
     work2Buffer,
@@ -112,18 +115,31 @@ export const seed = async ({
     socialIcon2Buffer,
     socialIcon3Buffer,
   ] = await Promise.all([
+    // post images
     fetchFileByURL(
-      'https://raw.githubusercontent.com/payloadcms/payload/refs/heads/main/templates/website/src/endpoints/seed/image-post1.webp',
+      'https://raw.githubusercontent.com/Lebatt/-website-template-tut/refs/heads/final/public/posts/post1.jpg'
     ),
     fetchFileByURL(
-      'https://raw.githubusercontent.com/payloadcms/payload/refs/heads/main/templates/website/src/endpoints/seed/image-post2.webp',
+      'https://raw.githubusercontent.com/Lebatt/-website-template-tut/refs/heads/final/public/posts/post2.jpg'
     ),
     fetchFileByURL(
-      'https://raw.githubusercontent.com/payloadcms/payload/refs/heads/main/templates/website/src/endpoints/seed/image-post3.webp',
+      'https://raw.githubusercontent.com/Lebatt/-website-template-tut/refs/heads/final/public/posts/post3.jpg'
     ),
     fetchFileByURL(
-      'https://raw.githubusercontent.com/payloadcms/payload/refs/heads/main/templates/website/src/endpoints/seed/image-hero1.webp',
+      'https://raw.githubusercontent.com/Lebatt/-website-template-tut/refs/heads/final/public/posts/post4.jpg'
     ),
+    fetchFileByURL(
+      'https://raw.githubusercontent.com/Lebatt/-website-template-tut/refs/heads/final/public/posts/post5.jpg'
+    ),
+    fetchFileByURL(
+      'https://raw.githubusercontent.com/Lebatt/-website-template-tut/refs/heads/final/public/posts/post6.jpg'
+    ),
+
+    // hero image 
+    fetchFileByURL(
+      'https://raw.githubusercontent.com/Lebatt/-website-template-tut/refs/heads/final/public/hero_background.png',
+    ),
+
     // Work Images
     fetchFileByURL(
       'https://raw.githubusercontent.com/Lebatt/-website-template-tut/refs/heads/portfolio-block/public/works/EDO_square_02.webp',
@@ -194,9 +210,12 @@ export const seed = async ({
 
   const [
     demoAuthor, 
-    image1Doc, 
-    image2Doc, 
-    image3Doc, 
+    postImage1Doc, 
+    postImage2Doc, 
+    postImage3Doc, 
+    postImage4Doc,
+    postImage5Doc,
+    postImage6Doc,
     imageHomeDoc,
   ] = await Promise.all([
     payload.create({
@@ -209,24 +228,41 @@ export const seed = async ({
     }),
     payload.create({
       collection: 'media',
-      data: image1,
-      file: image1Buffer,
+      data: generateImage(),
+      file: post1Buffer,
     }),
     payload.create({
       collection: 'media',
-      data: image2,
-      file: image2Buffer,
+      data: generateImage(),
+      file: post2Buffer,
     }),
     payload.create({
       collection: 'media',
-      data: image2,
-      file: image3Buffer,
+      data: generateImage(),
+      file: post3Buffer,
     }),
+    payload.create({
+      collection: 'media',
+      data: generateImage(),
+      file: post4Buffer,
+    }),
+    payload.create({
+      collection: 'media',
+      data: generateImage(),
+      file: post5Buffer,
+    }),
+    payload.create({
+      collection: 'media',
+      data: generateImage(),
+      file: post6Buffer,
+    }),
+
     payload.create({
       collection: 'media',
       data: imageHero1,
       file: hero1Buffer,
     }),
+
     categories.map((category) =>
       payload.create({
         collection: 'categories',
@@ -316,7 +352,7 @@ export const seed = async ({
     context: {
       disableRevalidate: true,
     },
-    data: post1({ heroImage: image1Doc, blockImage: image2Doc, author: demoAuthor }),
+    data: post1({ heroImage: postImage1Doc, blockImage: postImage1Doc, author: demoAuthor }),
   })
 
   const post2Doc = await payload.create({
@@ -325,7 +361,7 @@ export const seed = async ({
     context: {
       disableRevalidate: true,
     },
-    data: post2({ heroImage: image2Doc, blockImage: image3Doc, author: demoAuthor }),
+    data: post2({ heroImage: postImage2Doc, blockImage: postImage2Doc, author: demoAuthor }),
   })
 
   const post3Doc = await payload.create({
@@ -334,7 +370,7 @@ export const seed = async ({
     context: {
       disableRevalidate: true,
     },
-    data: post3({ heroImage: image3Doc, blockImage: image1Doc, author: demoAuthor }),
+    data: post3({ heroImage: postImage3Doc, blockImage: postImage3Doc, author: demoAuthor }),
   })
 
   // update each post with related posts
