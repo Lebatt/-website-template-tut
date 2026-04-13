@@ -1,6 +1,8 @@
 "use client";
 
 import { Media } from "@/components/Media";
+import { SectionDescription } from "@/components/Section/description";
+import { SectionTitle } from "@/components/Section/title";
 import { PortfolioBlock as PortfolioBlockProps } from "@/payload-types";
 import { usePayloadAPI } from "@payloadcms/ui";
 import { Item } from "@radix-ui/react-select";
@@ -43,15 +45,16 @@ export const PortfolioBlock: React.FC<PortfolioBlockProps> = ({
 
     return (
         <div className="w-full p-0 m-0 bg-foreground pt-12">
-            <h2 className="text-6xl font-bold mb-4 text-background text-center">{title}</h2>
-            <p className="text-lg mb-12 text-background/80 text-center">{description}</p>
-            <div className="grid grid-cols-4 gap-8">
+            <SectionTitle title={title} className="text-background" />
+            {description && <SectionDescription description={description} className="text-background/80" />}
+
+            <div className="grid grid-cols-4 gap-12">
                 {Object.keys(portfolioGrid).map((index: any) => {
                     const columnWorks = portfolioGrid[index]
                     return (
-                        <div className={`grid grid-cols-1 gap-8 ${Number(index)%2 === 0 ? 'mt-16' : 'mb-16'}`}>
+                        <div className={`grid grid-cols-1 gap-12 ${Number(index)%2 === 0 ? 'mt-16 -mb-px' : 'mb-16 -mt-px'}`} key={index}>
                             {columnWorks.map((work: any) => (
-                                <div className="relative h-[480px] w-full" key={work.id}>
+                                <div className="relative h-96 w-full" key={work.id}>
                                     <Media
                                         resource={work.image}
                                         imgClassName="object-cover absolute top-0 bottom-0 left-0 right-0 w-full h-full"

@@ -3,14 +3,13 @@ import type { CollectionSlug, GlobalSlug, Payload, PayloadRequest, File } from '
 import { contactForm as contactFormData } from './contact-form'
 import { contact as contactPageData } from './contact-page'
 import { home } from './home'
-import { image1 } from './image-1'
-import { image2 } from './image-2'
 import { imageHero1 } from './image-hero-1'
 import { post1 } from './post-1'
 import { post2 } from './post-2'
 import { post3 } from './post-3'
 import { generateWork } from './generateWork'
 import { generateImage } from './generateImage'
+import { generatePosts } from './generatePosts'
 
 const collections: CollectionSlug[] = [
   'categories',
@@ -21,11 +20,12 @@ const collections: CollectionSlug[] = [
   'form-submissions',
   'search',
   'works',
+  'services'
 ]
 
 const globals: GlobalSlug[] = ['header', 'footer']
 
-const categories = ['Technology', 'News', 'Finance', 'Design', 'Software', 'Engineering']
+const categories = ['Branding', 'Tiktok', 'Logo Design', 'FB', 'AI', 'NFT']
 
 // Next.js revalidation errors are normal when seeding the database without a server running
 // i.e. running `yarn seed` locally instead of using the admin UI within an active app
@@ -179,19 +179,19 @@ export const seed = async ({
     ),
     // Brand Images
     fetchFileByURL(
-      'https://raw.githubusercontent.com/Lebatt/-website-template-tut/refs/heads/portfolio-block/public/brands/Fictional%20company%20logo.png',
+      'https://raw.githubusercontent.com/Lebatt/-website-template-tut/refs/heads/final/public/brands/brand1.png',
     ),
     fetchFileByURL(
-      'https://raw.githubusercontent.com/Lebatt/-website-template-tut/refs/heads/portfolio-block/public/brands/Fictional%20company%20logo2.png',
+      'https://raw.githubusercontent.com/Lebatt/-website-template-tut/refs/heads/final/public/brands/brand2.png',
     ),
     fetchFileByURL(
-      'https://raw.githubusercontent.com/Lebatt/-website-template-tut/refs/heads/portfolio-block/public/brands/Fictional%20company%20logo3.png',
+      'https://raw.githubusercontent.com/Lebatt/-website-template-tut/refs/heads/final/public/brands/brand3.png',
     ),
     fetchFileByURL(
-      'https://raw.githubusercontent.com/Lebatt/-website-template-tut/refs/heads/portfolio-block/public/brands/Fictional%20company%20logo4.png',
+      'https://raw.githubusercontent.com/Lebatt/-website-template-tut/refs/heads/final/public/brands/brand4.png',
     ),
     fetchFileByURL(
-      'https://raw.githubusercontent.com/Lebatt/-website-template-tut/refs/heads/portfolio-block/public/brands/Fictional%20company%20logo5.png',
+      'https://raw.githubusercontent.com/Lebatt/-website-template-tut/refs/heads/final/public/brands/brand5.png',
     ),
     // Social Icons
     fetchFileByURL(
@@ -262,17 +262,20 @@ export const seed = async ({
       data: imageHero1,
       file: hero1Buffer,
     }),
-
-    categories.map((category) =>
-      payload.create({
-        collection: 'categories',
-        data: {
-          title: category,
-          slug: category,
-        },
-      }),
-    ),
   ])
+
+  // categories 
+  let categoryDocs = []
+  for (const category of categories) {
+    const categoryDoc = await payload.create({
+      collection: 'categories',
+      data: {
+        title: category,
+        slug: category,
+      },
+    })
+    categoryDocs.push(categoryDoc)
+  }
 
   // brand Images
   const brandBuffers = [brand1Buffer, brand2Buffer, brand3Buffer, brand4Buffer, brand5Buffer]
@@ -344,57 +347,24 @@ export const seed = async ({
 
   payload.logger.info(`— Seeding posts...`)
 
-  // Do not create posts with `Promise.all` because we want the posts to be created in order
-  // This way we can sort them by `createdAt` or `publishedAt` and they will be in the expected order
-  const post1Doc = await payload.create({
-    collection: 'posts',
-    depth: 0,
-    context: {
-      disableRevalidate: true,
-    },
-    data: post1({ heroImage: postImage1Doc, blockImage: postImage1Doc, author: demoAuthor }),
+  const posts = generatePosts({
+    author: demoAuthor,
+    images: [postImage1Doc, postImage2Doc, postImage3Doc, postImage4Doc, postImage5Doc, postImage6Doc],
+    categories: categoryDocs,
   })
 
-  const post2Doc = await payload.create({
-    collection: 'posts',
-    depth: 0,
-    context: {
-      disableRevalidate: true,
-    },
-    data: post2({ heroImage: postImage2Doc, blockImage: postImage2Doc, author: demoAuthor }),
-  })
-
-  const post3Doc = await payload.create({
-    collection: 'posts',
-    depth: 0,
-    context: {
-      disableRevalidate: true,
-    },
-    data: post3({ heroImage: postImage3Doc, blockImage: postImage3Doc, author: demoAuthor }),
-  })
-
-  // update each post with related posts
-  await payload.update({
-    id: post1Doc.id,
-    collection: 'posts',
-    data: {
-      relatedPosts: [post2Doc.id, post3Doc.id],
-    },
-  })
-  await payload.update({
-    id: post2Doc.id,
-    collection: 'posts',
-    data: {
-      relatedPosts: [post1Doc.id, post3Doc.id],
-    },
-  })
-  await payload.update({
-    id: post3Doc.id,
-    collection: 'posts',
-    data: {
-      relatedPosts: [post1Doc.id, post2Doc.id],
-    },
-  })
+  let createdPosts = []
+  for (const post of posts) {
+    const createdPost = await payload.create({
+      collection: 'posts',
+      depth: 0,
+      context: {
+        disableRevalidate: true,
+      },
+      data: post,
+    })
+    createdPosts.push(createdPost)
+  }
 
   payload.logger.info(`— Seeding contact form...`)
 
@@ -414,7 +384,7 @@ export const seed = async ({
         heroImage: imageHomeDoc, 
         brandImages, 
         works: workDocs,
-        posts: [post1Doc, post2Doc, post3Doc],
+        posts: createdPosts,
       }),
     }),
     payload.create({

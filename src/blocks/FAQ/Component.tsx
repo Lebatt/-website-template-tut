@@ -1,13 +1,15 @@
 import RichText from '@/components/RichText'
+import { SectionDescription } from '@/components/Section/description';
+import { SectionTitle } from '@/components/Section/title';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { FAQBlock as FAQBlockProps } from "@/payload-types";
 
 export const FAQBlock: React.FC<FAQBlockProps> = ({ title, description, items }) => {
     return (
-        <div className="w-full bg-foreground py-16 px-32">
+        <div className="w-full bg-foreground pt-16 pb-8 px-32">
             <div className="container flex flex-col">
-                <h2 className="text-6xl font-bold mb-4 text-background text-center">{title}</h2>
-                <p className="text-lg mb-12 text-background/80 text-center">{description}</p>
+                {title && <SectionTitle title={title} className="text-background" />}
+                {description && <SectionDescription description={description} className="text-background/80" />}
 
                 <Accordion type="single" collapsible defaultValue="item-1" className='max-w-lg mx-auto gap-8'>
                     {(items || []).map((item, index) => (
